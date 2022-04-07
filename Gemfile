@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'bundler', '2.3.5'
+gem 'cucumber', '5.2.0'
+gem 'json'
+gem 'jsonpath', '~> 0.5.8'
+gem 'mime-types', '3.3.1'
+gem 'rest-client'
+gem 'test-unit'
+gem 'minitest'
