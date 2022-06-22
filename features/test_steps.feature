@@ -12,7 +12,6 @@ Feature: Bookings
     And user creates a new booking
     Then user updates the meeting - decline
 
-
   Scenario: Create a booking and decline
     Given user is authorized
     Then user lists all bookings

@@ -1,10 +1,10 @@
 require 'rest-client'
 require 'minitest'
 
-# test_api_key_dR0J6UtWnvYY13nd0oK31L51XfjrhPyQ
+# test_api_key_LxVT0E5O5Plc8QeLrlJiVlOZSJkQtIp9
 
 def authorization
-  api_key = 'test_api_key_dR0J6UtWnvYY13nd0oK31L51XfjrhPyQ'
+  api_key = 'test_api_key_LxVT0E5O5Plc8QeLrlJiVlOZSJkQtIp9'
   @authToken = Base64.strict_encode64(":#{api_key}")
 end
 
@@ -33,14 +33,14 @@ def create_booking
   payload = {
     "resource_id": @resources_ids[0],
     "graph": "confirm_decline",
-    "start": "2022-04-26T21:30:00-07:00",
-    "end": "2022-04-27T22:15:00-07:00",
+    "start": "2024-04-26T21:30:00-07:00",
+    "end": "2024-04-27T22:15:00-07:00",
     "what": "Meta API course",
-    "where": "Ventspils",
+    "where": "Liepaja",
     "description": "The lightning strikes at 10:04 PM exactly! I need you to be there Doc!",
     "customer": {
-      "name": "Gatis Vaitovskis",
-      "email": "email@email.com",
+      "name": "Ketija Jekuma",
+      "email": "ketija.jekuma@testdevlab.com",
       "phone": "(916) 555-4385",
       "voip": "McFly",
       "timezone": "America/Los_Angeles"
@@ -77,6 +77,5 @@ def delete_booking
                               headers: { 'Authorization' => 'Basic ' + @authToken,
                                          'content-type' => 'application/json' },
                               cookies: {})
-  assert_equal(200, delete_booking_res.code, 'User cannot delete the meeting!')
-
+  assert_equal(204, delete_booking_res.code, 'User cannot delete the meeting!')
 end
